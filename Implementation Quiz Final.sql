@@ -3,10 +3,10 @@
   Imported title.basics.tsv as tempTitleBasics
   Imported titlePrincipals.tsv as titlePrinciples
  */
-    
+
 /* === Persistent Tables === */
 select * from nameBasics;
-select * from tempTitleBasics;
+--select * from tempTitleBasics;
 select * from titleBasics;
 select * from genres;
 select * from titleGenres;
@@ -19,10 +19,10 @@ select * from nameKnownForTitles;
  leave out the titles from title.basics.tsv
  that have 1 for the value isAdult.
  */
-create table titleBasics as
-select *
-from temptitlebasics
-where isadult = 0;
+-- create table titleBasics as
+-- select *
+-- from temptitlebasics
+-- where isadult = 0;
 
 /* ========== Fixing titleBasics genres ========== */
 alter table titleBasics
@@ -159,8 +159,6 @@ create table nameKnownForTitles (
     foreign key (knownForTitle) references titleBasics(tconst)
 );
 
---Below here has NOT been run
-
 INSERT INTO nameKnownForTitles (nconst, knownForTitle)
 SELECT nconst, TRIM(knownForTitle) AS knownForTitle
 FROM (
@@ -169,3 +167,4 @@ FROM (
     WHERE knownForTitles IS NOT NULL
 ) AS split_titles, titleBasics b
 WHERE knownForTitle <> '' and b.tconst = knownForTitle;
+/* ================================================================ */
