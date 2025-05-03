@@ -1,3 +1,20 @@
+/**
+  Imported name.basics.tsc as nameBasics
+  Imported title.basics.tsv as tempTitleBasics
+  Imported titlePrincipals.tsv as titlePrinciples
+ */
+    
+/* === Persistent Tables === */
+select * from nameBasics;
+select * from tempTitleBasics;
+select * from titleBasics;
+select * from genres;
+select * from titleGenres;
+select * from titlePrincipals;
+select * from professions;
+select * from nameProfessions;
+select * from nameKnownForTitles;
+
 /*
  leave out the titles from title.basics.tsv
  that have 1 for the value isAdult.
