@@ -4,17 +4,6 @@
   Imported titlePrincipals.tsv as titlePrinciples
  */
 
-/* === Persistent Tables === */
-select * from nameBasics;
---select * from tempTitleBasics;
-select * from titleBasics;
-select * from genres;
-select * from titleGenres;
-select * from titlePrincipals;
-select * from professions;
-select * from nameProfessions;
-select * from nameKnownForTitles;
-
 /*
  leave out the titles from title.basics.tsv
  that have 1 for the value isAdult.
@@ -168,3 +157,34 @@ FROM (
 ) AS split_titles, titleBasics b
 WHERE knownForTitle <> '' and b.tconst = knownForTitle;
 /* ================================================================ */
+
+/* === Persistent Tables === */
+select * from nameBasics;
+select * from titleBasics;
+select * from titlePrincipals;
+
+select * from genres;
+select * from titleGenres;
+select * from professions;
+select * from nameProfessions;
+select * from nameKnownForTitles;
+--select * from tempTitleBasics;
+
+/* names and title of all people in a movie with kevin bacon */
+-- create temp table withBacon as
+-- select b.primaryname as name, t.knownForTitle as title
+-- from(
+--     select knownForTitle
+--     from nameBasics b2, nameknownfortitles t2
+--     where b2.primaryname = 'Kevin Bacon'
+--       and b2.nconst = t2.nconst
+--       and b2.knownfortitles like '%' || t2.knownForTitle || '%'
+--     ) as baconTitles, nameBasics b, nameknownForTitles t
+-- where t.knownForTitle = baconTitles.knownForTitle
+--   and b.knownfortitles like '%' || t.knownForTitle || '%'
+--   and b.nconst = t.nconst;
+
+
+
+
+
