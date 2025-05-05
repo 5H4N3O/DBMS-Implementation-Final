@@ -1,3 +1,7 @@
+/*
+ github Link: https://github.com/5H4N3O/DBMS-Implementation-Final.git
+ */
+
 /**
   Imported name.basics.tsv as nameBasics
   Imported title.basics.tsv as tempTitleBasics
@@ -169,22 +173,3 @@ select * from professions;
 select * from nameProfessions;
 select * from nameKnownForTitles;
 select * from tempTitleBasics;
-
-/* names and title of all people in a movie with kevin bacon */
--- create temp table withBacon as
--- select b.primaryname as name, t.knownForTitle as title
--- from(
---     select knownForTitle
---     from nameBasics b2, nameknownfortitles t2
---     where b2.primaryname = 'Kevin Bacon'
---       and b2.nconst = t2.nconst
---       and b2.knownfortitles like '%' || t2.knownForTitle || '%'
---     ) as baconTitles, nameBasics b, nameknownForTitles t
--- where t.knownForTitle = baconTitles.knownForTitle
---   and b.knownfortitles like '%' || t.knownForTitle || '%'
---   and b.nconst = t.nconst;
-
-
-
-
-
