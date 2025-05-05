@@ -1,10 +1,17 @@
-/* === Temporary Tables ===
-   baconTitles
-   actedWithBacon
-   actedTitles
-   actedWithActed
-*/
+/*
+ Print the unique names of all individuals who were an actor in a movie
+ where that actor was in a movie with someone who acted in a movie that
+ included Kevin Bacon but not in any movie as an actor with Kevin Bacon.
+ */
 
+/*
+ ===== Temporary Tables =====
+ baconTitles
+ actedWithBacon
+ actedTitles
+ actedWithActed
+ ============================
+ */
 
 /*
  All titles that Kevin Bacon is in

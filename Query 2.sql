@@ -4,6 +4,16 @@
  */
 
 /*
+ ===== Temporary Tables =====
+ directMovies
+ oneLinkPeople
+ oneLinkMovies
+ twoLinkPeople
+ twoLinkMovies
+ ============================
+ */
+
+/*
  A movie is directly linked to Kevin Bacon if Kevin Bacon
  was an actor, director, or producer of that movie.
  */

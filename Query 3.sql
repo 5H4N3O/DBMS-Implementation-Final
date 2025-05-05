@@ -3,6 +3,14 @@
  the same movie as Kevin Bacon by how many times they worked on movies
  with Kevin Bacon (excluding Kevin Bacon himself).
  */
+
+ /*
+ ===== Temporary Tables =====
+ baconMovies
+ eligiblePeople
+ ============================
+ */
+
 create temp table baconMovies as
 select tconst
 from titlePrincipals p
