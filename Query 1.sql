@@ -47,7 +47,6 @@ where awb.nconst = p.nconst
  who had been in a Kevin Bacon title, but not in a
  Kevin Bacon title themselves
  */
-create temp table actedWithActed as
 select distinct n.primaryname
 from nameBasics n join titlePrincipals p on n.nconst = p.nconst,
      actedTitles at
