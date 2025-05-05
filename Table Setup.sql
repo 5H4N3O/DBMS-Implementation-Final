@@ -1,5 +1,5 @@
 /**
-  Imported name.basics.tsc as nameBasics
+  Imported name.basics.tsv as nameBasics
   Imported title.basics.tsv as tempTitleBasics
   Imported titlePrincipals.tsv as titlePrinciples
  */
@@ -8,10 +8,10 @@
  leave out the titles from title.basics.tsv
  that have 1 for the value isAdult.
  */
--- create table titleBasics as
--- select *
--- from temptitlebasics
--- where isadult = 0;
+create table titleBasics as
+select *
+from temptitlebasics t
+where t.isadult = 0;
 
 /* ========== Fixing titleBasics genres ========== */
 alter table titleBasics
@@ -168,7 +168,7 @@ select * from titleGenres;
 select * from professions;
 select * from nameProfessions;
 select * from nameKnownForTitles;
---select * from tempTitleBasics;
+select * from tempTitleBasics;
 
 /* names and title of all people in a movie with kevin bacon */
 -- create temp table withBacon as
