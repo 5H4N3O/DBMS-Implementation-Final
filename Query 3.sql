@@ -24,11 +24,12 @@ join titlePrincipals p on b.tconst = p.tconst
 where (p.category = 'actor' or p.category = 'writer' or p.category = 'producer')
   and p.nconst not in (select nconst from nameBasics where primaryname = 'Kevin Bacon');
 
-select n.primaryname, count(*) as baconMovies
+select n.primaryname, count(distinct p.tconst) as baconMovies
 from titleprincipals p
     join eligiblePeople e on p.nconst = e.nconst
     join nameBasics n on n.nconst = e.nconst
     join baconMovies b on b.tconst = p.tconst
+where (p.category = 'actor' or p.category = 'writer' or p.category = 'producer')
 group by n.primaryname
 order by baconMovies desc
 limit 5;
